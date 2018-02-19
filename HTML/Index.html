@@ -6,14 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    
+    <script src="../JavaScript/jsfunction.js"></script>
+    <script src="../JavaScript/generatorePersona.js"></script>
 </head>
-<body>
-    <header>
-        
+<body onload="caricaDati(getName(), getLastLogDate())">
+    <header style="height:150px; background:#F0F0F0; border:3px solid #CCC; width: 1180px; margin:0px auto;">
+        <h2>Ciao e bentornato:</h2><p id="nome"></p> 
+        <br>
+        <h2>L'ultima volta che ci hai fatto visita è stata il giorno:</h2><p id="data"></p>
     </header>
 
+   
+        <main id="body" style="height:1500px; background:#F0F0F0; border:1px solid #CCC; width: 1180px; margin:20px auto;">
 
+            <section id="Geolocalizza" style="height:200px; background: rgb(245, 147, 147); width:1140px; margin: 10px auto;">
+                <article>
+                        <h2>Ti trovi esattamente qui: </h2> <p id="location"></p>
+                </article>
+            </section>
 
+            <section id="dettagli"  style="height: 800px ; background: rgb(245, 147, 147); width:90%; margin: 10px auto;">
+                <article id="weatherTable" style="height:500px; background: green; width:30%;"></article>
+                <article id="img" style="height:500px; background: green; width:0%;"></article>
+            </section>
+
+        </main>
+
+    
+
+<footer></footer>
     <script src=""></script>
 </body>
 </html>
