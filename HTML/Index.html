@@ -9,6 +9,8 @@
         <script src="../JavaScript/generatoreMeteo.js"></script>
         <script src="../JavaScript/jsfunctions.js"></script>
         <script src="../JavaScript/generatorePersona.js"></script>
+        <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1EHAsI359U-bXcnQc_2QdDCZ7eG4T8ZA&callback=miaFunzioneCallback"></script>
     </head>
     <body onload="caricaDati( getName (), getLastLogDate (), getVet ())">
         <header>
@@ -25,7 +27,9 @@
                 </ul>
             </nav>  
             <section id="geolocate">
-                <article></article>
+                <article>
+                    <div id="mappa"></div>
+                </article>
             </section>
             <section id="details">
                 <article id="weatherTable">

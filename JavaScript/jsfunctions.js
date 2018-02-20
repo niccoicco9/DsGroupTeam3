@@ -1,3 +1,6 @@
+var mainlat;
+var mainlon;
+
 function caricaDati (nome, data, arr) {
     addName (nome, data);
     if ("geolocation" in navigator) {
@@ -17,9 +20,19 @@ function functionGo (posizione){
     if(posizione && posizione.coords) {
         var latitudine = posizione.coords.latitude.toFixed(2);
         var longitudine  = posizione.coords.longitude.toFixed(2);
+        mainlat = latitudine;
+        mainlon = longitudine;
         var app = "[" + latitudine + "," + longitudine + "]";
         document.getElementById ("idgeocoor").innerText = app;
     }
+}
+
+function miaFunzioneCallback(){
+    var mapProp= {
+        center:new google.maps.LatLng(mainlat,mainlon),
+        zoom:16,
+    };
+    var map=new google.maps.Map(document.getElementById("mappa"),mapProp);
 }
 
 function functionError (error) {
