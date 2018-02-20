@@ -1,16 +1,21 @@
-function caricaDati (nome, data) {
-    var pnomeapp = document.getElementById ("nome");
-    pnomeapp.innerText = nome;
-    var pdataapp = document.getElementById ("data");
-    pdataapp.innerText = data;
-    function location () {
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition (funzioneOk, funzioneErrore);
-        } else {
-            alert('La geolocation non è disponibile');
-        }
-    }
+function caricaDati (nome, data, arr) {
+    addName (nome, data);
+    /*location;*/
+    addTable (arr);
 }
+
+function addName (nome, data) {
+    document.getElementById ("nome").innerText = nome;
+    document.getElementById ("data").innerText = data;
+}
+
+/*function location () {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition (funzioneOk, funzioneErrore);
+    } else {
+        alert('La geolocation non è disponibile');
+    }
+}*/
 
 function funzioneOk(posizione){
     if(posizione && posizione.coords){
@@ -23,4 +28,14 @@ function funzioneOk(posizione){
 
 function funzioneErrore(error) {
     alert(error.message);
+}
+
+function addTable (arr) {
+    document.getElementById ("idwind").innerText = arr[0];
+    document.getElementById ("iddescription").innerText = arr[1];
+    document.getElementById ("idgeocoor").innerText = arr[2];
+    document.getElementById ("idpressure").innerText = arr[3];
+    document.getElementById ("idtemperature").innerText = arr[4];
+    document.getElementById ("idsunset").innerText = arr[5];
+    document.getElementById ("idsunrise").innerText = arr[6];
 }

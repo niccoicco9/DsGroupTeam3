@@ -1,14 +1,14 @@
-var weather = {
+var meteo = {
     "coord": {
         "lon": 45.77,
         "lat": 9.92
     },
-    "weather": [{
+    "weather": {
         "id": 803,
         "main": "Clouds",
         "description": "Broken clouds",
         "icon": "04n"
-    }],
+    },
     "base": "cmc stations",
     "main": {
         "temp": 6,
@@ -44,4 +44,50 @@ var weather = {
     "id": 2172797,
     "name": "Cairns",
     "cod": 200
+}
+
+function getWind () {
+    return meteo.wind.speed + " m/s";
+}
+
+function getDescription () {
+    return meteo.weather.description;
+}
+
+function getCoord () {
+    return "[" + meteo.coord.lat.toFixed(2) + "," + meteo.coord.lon.toFixed(2) + "]";
+}
+
+function getPressure () {
+    return meteo.main.pressure + " hpa";
+}
+
+function getTemp () {
+    return meteo.main.temp + "°C";
+}
+
+function getSunrset () {
+    return changeDate (meteo.sys.sunset);
+}
+
+function getSunrise () {
+    return changeDate (meteo.sys.sunrise);
+}
+
+function changeDate (app) {
+    var date = new Date(app * 1000);
+    date.toLocaleTimeString();
+    return date.getHours() + ":" + date.getMinutes ();
+}
+
+function getVet () {
+    var vet = new Array ();
+    vet.push (getWind ());
+    vet.push (getDescription ());
+    vet.push (getCoord ());
+    vet.push (getPressure ());
+    vet.push (getTemp ());
+    vet.push (getSunrset ());
+    vet.push (getSunrise ());
+    return vet;
 }
