@@ -149,6 +149,10 @@ footer div#divright {
 footer div#divleft ul {
     margin-top: 40px;
 }
+footer div#divleft li {
+    font-size: 2em;
+    margin-top: 10px;
+}
 
 footer div#divleft {
     float: left;
