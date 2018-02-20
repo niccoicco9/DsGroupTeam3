@@ -6,65 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    
-    
+    <script src="../JavaScript/generatoreMeteo.js"></script>
+    <script src="../JavaScript/jsfunction.js"></script>
+    <script src="../JavaScript/generatorePersona.js"></script>
 </head>
-<body>
+<body onload="caricaDati( getName (), getLastLogDate (), getVet ())">
     <header>
-        <h2>Ciao e bentornato:</h2><p id="nome"></p> 
+        
+        <p>Ciao e bentornato:<p><h2 id="nome"></h2> 
         <br>
-        <h2>L'ultima volta che ci hai fatto visita è stata il giorno:</h2><p id="data"></p>
+        <p>L'ultima volta che ci hai fatto visita è stata il giorno:</p><h2 id="data"></h2>
     </header>
 
+
+    <main>
+    <nav>
+                            
+            <ul>
+                    <li ><a href="Home.html">Home</a></li>
+                    <li ><a href="Weather.html">Weather</a></li>
+                    <li ><a href="Contact.html">Contact </a></li>                                           
+            </ul>
+    
+        </nav>  
    
-        <main>
+       
 
             <section id="geolocate">
                 <article>
-                        <h2>Ti trovi esattamente qui: </h2> <p id="location"></p>
+                        
                 </article>
             </section>
 
             <section id="details">
                 <article id="weatherTable">
-                    <table width="100%" height="500px" border="1px solid black">
+                    <table width="100%" height="500px" border="1px solid black" bgcolor="#94b8ee">
                       <tr>
-                          <th colspan="2"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Weather-Partly-Cloudy-Rain-icon.png" width="50px" height="50px"></th>
+                          <th colspan="2"><img src="https://cdn.pixabay.com/photo/2016/05/04/13/36/mix-1371393_960_720.png" width="50px" height="50px"></th>
                         </tr>
 
                         <tr>
-                            <td>Wind</td>
+                            <td><p>Wind</p></td>
                             <td><p id="idwind"></p></td>
                             </tr>
     
                         <tr>
-                            <td>Description</td>
+                            <td><p>Description</p></td>
                             <td><p id="iddescription"></p></td>
                         </tr>
 
 
                         <tr>
-                            <td>GeoCoordinates</td>
-                            <td><p id="idgeocoor">[69,90]</p></td>
+                            <td><p>Coordinates</p></td>
+                            <td><p id="idgeocoor"></p></td>
                         </tr>
 
                         <tr>
-                            <td>Pressure</td>
-                            <td><p id="idpressure">1080hpa</p></td>
+                            <td><p>Pressure</p></td>
+                            <td><p id="idpressure"></p></td>
                         </tr>
 
                         <tr>
-                            <td>Temperature</td>
-                            <td><p id="idtemperature">40°</p></td>
+                            <td><p>Temperature</p></td>
+                            <td><p id="idtemperature"></p></td>
                         </tr>
                         <tr>
-                            <td>Sunset</td>
-                            <td><p id="idsunset">8pm</p></td>
+                            <td><p>Sunrise</p></td>
+                            <td><p id="idsunrise"></p></td>
                         </tr>
 
                         <tr>
-                            <td>Sunrise</td>
-                            <td id="idsunrise">8am</td>
+                            <td><p>Sunset</p></td>
+                            <td><p  id="idsunset"></p></td>
                         </tr>
                     </table>
                 </article>
@@ -78,11 +91,11 @@
 <footer>
     <table id="social" cellspacing="40px">
         <tr>
-            <td><img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png" class="social"></td>
+            <td><a href="https://it-it.facebook.com/"><img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png" class="social"></a></td>
         
-            <td><img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png" class="social"></td>
+            <td><a href="https://www.youtube.com/?hl=it&gl=IT"><img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png" class="social"></a></td>
         
-            <td><img src="https://www.seoclerk.com/pics/want1411-1.png"class="social"></td>
+            <td><a href="https://twitter.com/login?lang=it"><img src="https://www.seoclerk.com/pics/want1411-1.png"class="social"></a></td>
        
           
         </tr>
