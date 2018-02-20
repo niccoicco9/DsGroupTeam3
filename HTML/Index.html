@@ -10,64 +10,79 @@
     
 </head>
 <body>
-    <header style="height:150px; background:#F0F0F0; border:3px solid #CCC; width: 1180px; margin:0px auto;">
+    <header>
         <h2>Ciao e bentornato:</h2><p id="nome"></p> 
         <br>
         <h2>L'ultima volta che ci hai fatto visita è stata il giorno:</h2><p id="data"></p>
     </header>
 
    
-        <main id="body" style="height:1500px; background:#F0F0F0; border:1px solid #CCC; width: 1180px; margin:20px auto;">
+        <main>
 
-            <section id="Geolocalizza" style="height:200px; background: rgb(245, 147, 147); width:1140px; margin: 10px auto;">
+            <section id="geolocate">
                 <article>
                         <h2>Ti trovi esattamente qui: </h2> <p id="location"></p>
                 </article>
             </section>
 
-            <section id="dettagli"  style="height: 800px ; background: rgb(245, 147, 147); width:90%; margin: 10px auto;">
-                <article id="weatherTable" style="height:500px; background: green; width:30%;">
-                    <table width="100%" border="1px solid black">
+            <section id="details">
+                <article id="weatherTable">
+                    <table width="100%" height="500px" border="1px solid black">
+                      <tr>
+                          <th colspan="2"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Weather-Partly-Cloudy-Rain-icon.png" width="50px" height="50px"></th>
+                        </tr>
+
+                        <tr>
+                            <td>Wind</td>
+                            <td><p id="idwind"></p></td>
+                            </tr>
+    
+                        <tr>
+                            <td>Description</td>
+                            <td><p id="iddescription"></p></td>
+                        </tr>
+
+
                         <tr>
                             <td>GeoCoordinates</td>
-                            <td><p id="geocoor">[69,90]</p></td>
+                            <td><p id="idgeocoor">[69,90]</p></td>
                         </tr>
 
                         <tr>
                             <td>Pressure</td>
-                            <td><p id="pressure">1080hpa</p></td>
+                            <td><p id="idpressure">1080hpa</p></td>
                         </tr>
 
                         <tr>
                             <td>Temperature</td>
-                            <td><p id="temperature">40°</p></td>
+                            <td><p id="idtemperature">40°</p></td>
                         </tr>
                         <tr>
                             <td>Sunset</td>
-                            <td><p id="sunset">8pm</p></td>
+                            <td><p id="idsunset">8pm</p></td>
                         </tr>
 
                         <tr>
                             <td>Sunrise</td>
-                            <td id="sunrise">8am</td>
+                            <td id="idsunrise">8am</td>
                         </tr>
                     </table>
                 </article>
-                <article id="img" style="height:500px; background: green; width:0%;"></article>
+                
             </section>
 
         </main>
 
     
 
-<footer id="social">
-    <table>
+<footer>
+    <table id="social" cellspacing="40px">
         <tr>
-            <td><img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png"></td>
+            <td><img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png" class="social"></td>
         
-            <td><img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png"></td>
+            <td><img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png" class="social"></td>
         
-            <td><img src="https://www.seoclerk.com/pics/want1411-1.png"></td>
+            <td><img src="https://www.seoclerk.com/pics/want1411-1.png"class="social"></td>
        
           
         </tr>
