@@ -1,0 +1,50 @@
+body{
+    
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    text-align: center;
+    height:150px; 
+    background:rgb(223, 138, 11);
+    border:3px solid #CCC;
+    width: 100%; 
+    margin:0px auto;
+}
+
+main{
+    height:800px; 
+    background:transparent;
+    border:1px solid #CCC;
+    width: 100%;
+    margin:20px auto;
+}
+
+#geolocate{
+    height: 200px;
+    background: rgb(39, 35, 35); 
+    width: 95%;
+    margin: 10px auto;
+    color: orange;
+}
+
+#weatherTable{
+    height:500px; 
+    background:#CCC; 
+    width:40%;
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(39, 35, 35);
+}
+
+#details{
+    height:500px ; background: transparent; width:90%; margin: 10px auto;
+}
+
+.social{
+    width: 50px;
+    height: 50px;
+}

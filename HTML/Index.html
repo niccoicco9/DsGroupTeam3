@@ -7,9 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/style.css">
     
-    
+    <script src="../JavaScript/jsfunction.js"></script>
+    <script src="../JavaScript/generatorePersona.js"></script>
 </head>
-<body>
+<body onload="caricaDati(getName(), getLastLogDate())">
     <header style="height:150px; background:#F0F0F0; border:3px solid #CCC; width: 1180px; margin:0px auto;">
         <h2>Ciao e bentornato:</h2><p id="nome"></p> 
         <br>
@@ -26,33 +27,7 @@
             </section>
 
             <section id="dettagli"  style="height: 800px ; background: rgb(245, 147, 147); width:90%; margin: 10px auto;">
-                <article id="weatherTable" style="height:500px; background: green; width:30%;">
-                    <table width="100%" border="1px solid black">
-                        <tr>
-                            <td>GeoCoordinates</td>
-                            <td><p id="geocoor">[69,90]</p></td>
-                        </tr>
-
-                        <tr>
-                            <td>Pressure</td>
-                            <td><p id="pressure">1080hpa</p></td>
-                        </tr>
-
-                        <tr>
-                            <td>Temperature</td>
-                            <td><p id="temperature">40°</p></td>
-                        </tr>
-                        <tr>
-                            <td>Sunset</td>
-                            <td><p id="sunset">8pm</p></td>
-                        </tr>
-
-                        <tr>
-                            <td>Sunrise</td>
-                            <td id="sunrise">8am</td>
-                        </tr>
-                    </table>
-                </article>
+                <article id="weatherTable" style="height:500px; background: green; width:30%;"></article>
                 <article id="img" style="height:500px; background: green; width:0%;"></article>
             </section>
 
@@ -60,19 +35,7 @@
 
     
 
-<footer id="social">
-    <table>
-        <tr>
-            <td><img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png"></td>
-        
-            <td><img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png"></td>
-        
-            <td><img src="https://www.seoclerk.com/pics/want1411-1.png"></td>
-       
-          
-        </tr>
-    </table>
-</footer>
-    
+<footer></footer>
+    <script src=""></script>
 </body>
 </html>
