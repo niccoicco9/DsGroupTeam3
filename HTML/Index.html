@@ -1,67 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../JavaScript/generatoreMeteo.js"></script>
-    <script src="../JavaScript/jsfunctions.js"></script>
-    <script src="../JavaScript/generatorePersona.js"></script>
-</head>
-<body onload="caricaDati( getName (), getLastLogDate (), getVet ())">
-    <header>
-        <p>Ciao e bentornato: <h2 id="nome"></h2></p>
-        <p>L'ultima volta che ci hai fatto visita è stata il giorno: <h2 id="data"></h2></p>
-    </header>
-    <main>
-    <nav>
-                            
-            <ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="../CSS/style.css">
+        <script src="../JavaScript/generatoreMeteo.js"></script>
+        <script src="../JavaScript/jsfunctions.js"></script>
+        <script src="../JavaScript/generatorePersona.js"></script>
+    </head>
+    <body onload="caricaDati( getName (), getLastLogDate (), getVet ())">
+        <header>
+            <div><img src="../IMG/logo.svg" alt=""></div>
+            <h1>Ciao e bentornato: <p id="nome"></p></h1>
+            <h1>L'ultima volta che ci hai fatto visita è stata il giorno: <p id="data"></p></h1>
+        </header>
+        <main>
+            <nav>
+                <ul>
                     <li ><a href="Home.html">Home</a></li>
                     <li ><a href="Weather.html">Weather</a></li>
                     <li ><a href="Contact.html">Contact </a></li>                                           
-            </ul>
-    
-        </nav>  
-   
-       
-
+                </ul>
+            </nav>  
             <section id="geolocate">
-                <article>
-                        
-                </article>
+                <article></article>
             </section>
-
             <section id="details">
                 <article id="weatherTable">
-                    <table width="100%" height="500px" border="1px solid black" bgcolor="#94b8ee">
-                      <tr>
-                          <th colspan="2"><img src="https://cdn.pixabay.com/photo/2016/05/04/13/36/mix-1371393_960_720.png" width="50px" height="50px"></th>
+                    <table>
+                        <tr>
+                            <!--th colspan="2"><img src="https://cdn.pixabay.com/photo/2016/05/04/13/36/mix-1371393_960_720.png" width="50px" height="50px"></th-->
                         </tr>
-
                         <tr>
                             <td><p>Wind</p></td>
                             <td><p id="idwind"></p></td>
-                            </tr>
-    
+                        </tr>
                         <tr>
                             <td><p>Description</p></td>
                             <td><p id="iddescription"></p></td>
                         </tr>
-
-
                         <tr>
                             <td><p>Coordinates</p></td>
                             <td><p id="idgeocoor"></p></td>
                         </tr>
-
                         <tr>
                             <td><p>Pressure</p></td>
                             <td><p id="idpressure"></p></td>
                         </tr>
-
                         <tr>
                             <td><p>Temperature</p></td>
                             <td><p id="idtemperature"></p></td>
@@ -70,33 +57,43 @@
                             <td><p>Sunrise</p></td>
                             <td><p id="idsunrise"></p></td>
                         </tr>
-
                         <tr>
                             <td><p>Sunset</p></td>
                             <td><p  id="idsunset"></p></td>
                         </tr>
                     </table>
                 </article>
-                
             </section>
-
         </main>
-
-    
-
-<footer>
-    <table id="social" cellspacing="40px">
-        <tr>
-            <td><a href="https://it-it.facebook.com/"><img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png" class="social"></a></td>
-        
-            <td><a href="https://www.youtube.com/?hl=it&gl=IT"><img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png" class="social"></a></td>
-        
-            <td><a href="https://twitter.com/login?lang=it"><img src="https://www.seoclerk.com/pics/want1411-1.png"class="social"></a></td>
-       
-          
-        </tr>
-    </table>
-</footer>
-    
-</body>
+        <footer>
+            <div id="divleft">
+                <ul>
+                    <li ><a href="Home.html">Home</a></li>
+                    <li ><a href="Weather.html">Weather</a></li>
+                    <li ><a href="Contact.html">Contact </a></li>                                           
+                </ul>
+            </div>
+            <div id="divright">
+                <table id="social" cellspacing="40px">
+                    <tr>
+                        <td>
+                            <a href="https://it-it.facebook.com/">
+                                <img src="http://webiconspng.com/wp-content/uploads/2017/09/Facebook-PNG-Image-38915.png" class="social">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="https://www.youtube.com/?hl=it&gl=IT">
+                                <img src="http://files.softicons.com/download/social-media-icons/sociocons-icons-by-rohit-tripathi/png/256x256/youtube-sociocon.png" class="social">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="https://twitter.com/login?lang=it">
+                                <img src="https://www.seoclerk.com/pics/want1411-1.png"class="social">
+                            </a
+                        ></td>
+                    </tr>
+                </table>
+        </div>
+        </footer>   
+    </body>
 </html>

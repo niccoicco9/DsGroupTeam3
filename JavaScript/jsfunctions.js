@@ -31,6 +31,6 @@ function addTable (arr) {
     document.getElementById ("iddescription").innerText = arr[1];
     document.getElementById ("idpressure").innerText = arr[3];
     document.getElementById ("idtemperature").innerText = arr[4];
-    document.getElementById ("idsunset").innerText = arr[5];
-    document.getElementById ("idsunrise").innerText = arr[6];
+    document.getElementById ("idsunset").innerText = arr[6];
+    document.getElementById ("idsunrise").innerText = arr[5];
 }

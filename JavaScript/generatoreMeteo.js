@@ -66,7 +66,7 @@ function getTemp () {
     return meteo.main.temp + "°C";
 }
 
-function getSunrset () {
+function getSunset () {
     return changeDate (meteo.sys.sunset);
 }
 
@@ -87,7 +87,7 @@ function getVet () {
     vet.push (getCoord ());
     vet.push (getPressure ());
     vet.push (getTemp ());
-    vet.push (getSunrset ());
+    vet.push (getSunset ());
     vet.push (getSunrise ());
     return vet;
 }
