@@ -13,13 +13,17 @@ h2{
 }
 
 header{
-    text-align: center;
-    height:150px; 
+    text-align: left;
+    height:auto; 
     background: #94b8ee;
     border:3px solid #CCC;
     width: 100%; 
     margin:0px auto;
     color: white;
+}
+
+header *{
+    margin: 0px;
 }
 
 main{
