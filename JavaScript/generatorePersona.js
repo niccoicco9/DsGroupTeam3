@@ -1,7 +1,7 @@
 var Name = {
     title: 'mrs.',
-    first: 'Sasha',
-    last: 'Gray'
+    first: 'Peppa',
+    last: 'Pig'
 }
 
 var Location = {
