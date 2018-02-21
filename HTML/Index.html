@@ -9,10 +9,9 @@
         <script src="../JavaScript/generatoreMeteo.js"></script>
         <script src="../JavaScript/jsfunctions.js"></script>
         <script src="../JavaScript/generatorePersona.js"></script>
-        <script 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1EHAsI359U-bXcnQc_2QdDCZ7eG4T8ZA&callback=miaFunzioneCallback"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-fxKwF1sWWcV49zr9q0cT97l6fIqZj-E&callback=initMap"></script>
     </head>
-    <body onload="caricaDati( getName (), getLastLogDate (), getVet ())">
+    <body onload="caricaDati( getName (), getLastLog (), getVet ())">
         <header>
             <div><img src="../IMG/logo.svg" alt=""></div>
             <h1>Ciao e bentornato: <p id="nome"></p></h1>
@@ -25,11 +24,8 @@
                     <li ><a href="Weather.html">Weather</a></li>
                     <li ><a href="Contact.html">Contact </a></li>                                           
                 </ul>
-            </nav>  
-            <section id="geolocate">
-                <article>
-                    <div id="mappa"></div>
-                </article>
+            </nav> 
+            <div id="map"></div>
             </section>
             <section id="details">
                 <article id="weatherTable">
