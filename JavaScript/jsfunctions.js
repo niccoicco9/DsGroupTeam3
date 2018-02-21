@@ -1,4 +1,5 @@
 var map, infoWindow;
+
 function initMap () {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -24,8 +25,8 @@ function initMap () {
     }
 }
 
-function caricaDati (nome, data, arr) {
-    addName (nome, data);
+function caricaDati (nome, data, arr, titolo) {
+    addName (nome, data, titolo);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition (functionGo, functionError);
     } else {
@@ -34,8 +35,15 @@ function caricaDati (nome, data, arr) {
     addTable (arr);
 }
 
-function addName (nome, data) {
-    document.getElementById ("nome").innerText = nome;
+function addName (nome, data, titolo) {
+    var para = document.createElement ("p");
+    var h1 = document.getElementById ("sex");
+    var node = document.createTextNode(nome);
+    para.appendChild(node);
+    if (titolo=="mrs.") {
+        var app = "Ciao e bentornata :<p>" + nome + "</p>";
+    }
+    document.getElementById ("sex").innerText = app;
     document.getElementById ("data").innerText = data;
 }
 
