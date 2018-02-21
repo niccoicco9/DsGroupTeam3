@@ -92,3 +92,7 @@ function getPhone () {
 function getPassword () {
     return Login.password;
 }
+
+function getTitle () {
+    return Name.title;
+}

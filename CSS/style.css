@@ -2,15 +2,15 @@ body{
     font-style: italic;
     font-size: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0px;
+    margin: 0px 5px;
 }
 
 p{
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
-h2{
-    font-size: 1.5em;
+h1, p#sex {
+    font-size: 2em;
 }
 
 header {
@@ -26,16 +26,16 @@ header {
 header div {
     position: absolute;
     width: auto;
-    margin-top: 50px;
+    margin-top: 45px;
     right: 20px;
 }
 
 header div img {
     position: relative;
-    height: 40px;
+    height: 35px;
 }
 
-header h1 {
+header h1, p#sex  {
     margin: 20px 0px;
     width: 100%;
     display: inline-flex;
@@ -59,13 +59,19 @@ main nav {
 
 #geolocate{
     height: auto;
-    background: #4e4d4a; 
+    /*background: #4e4d4a;*/ 
     width: 95%;
     margin: 10px auto;
     color: white;
     text-align: center;
     display: block;
     font-size: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 2%;
 }
 
 #weatherTable {
@@ -93,7 +99,6 @@ footer {
 
 .social{
     width: 50px;
-    height: 50px;
 }
 
 nav ul, footer div#divleft ul{
@@ -163,3 +168,15 @@ footer:after {
     display: table;
     clear: both;
 }
+
+/* dimensioni dello screen */
+
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1100px) {}
+@media screen and (max-width: 992px) {}
+@media screen and (max-width: 765px) {}
+@media screen and (max-width: 545px) {}
+@media screen and (max-width: 460px) {}
+@media screen and (max-width: 320px) {}
+@media screen and (max-height: 545px) {}
+@media screen and (max-height: 400px) {}

@@ -1,12 +1,36 @@
-var mainlat;
-var mainlon;
+var map, infoWindow;
 
-function caricaDati (nome, data, arr) {
-    addName (nome, data);
-    if ("geolocation" in navigator) {
+function initMap () {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: 45.5094965,
+            lng: 9.2315997
+        },
+        zoom: 14
+    });
+    infoWindow = new google.maps.InfoWindow;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You are here');
+            infoWindow.open(map);
+            map.setCenter(pos);
+        },functionError);
+    } else {
+        functionError
+    }
+}
+
+function caricaDati (nome, data, arr, titolo) {
+    addName (nome, data, titolo);
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition (functionGo, functionError);
     } else {
-        document.getElementById ("idgeocoor").innerText = "La geolocation non è disponibile";
+        functionError
     }
     addTable (arr);
 }
@@ -17,22 +41,7 @@ function addName (nome, data) {
 }
 
 function functionGo (posizione){
-    if(posizione && posizione.coords) {
-        var latitudine = posizione.coords.latitude.toFixed(2);
-        var longitudine  = posizione.coords.longitude.toFixed(2);
-        mainlat = latitudine;
-        mainlon = longitudine;
-        var app = "[" + latitudine + "," + longitudine + "]";
-        document.getElementById ("idgeocoor").innerText = app;
-    }
-}
-
-function miaFunzioneCallback(){
-    var mapProp= {
-        center:new google.maps.LatLng(mainlat,mainlon),
-        zoom:16,
-    };
-    var map=new google.maps.Map(document.getElementById("mappa"),mapProp);
+    document.getElementById ("idgeocoor").innerText = "[" + posizione.coords.latitude.toFixed (2) + "," + posizione.coords.longitude.toFixed (2) + "]";
 }
 
 function functionError (error) {
