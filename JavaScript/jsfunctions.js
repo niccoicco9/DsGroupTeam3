@@ -32,7 +32,8 @@ $(document).ready(function(){
             handleLocationError(false, infoWindow, map.getCenter());
         }
     }
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2", function(data) {
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2"
+    $.getJSON(url, function(data) {
         globlalweather = data;
     });
     $.getJSON("https://randomuser.me/api/?results=1", function(data) {
