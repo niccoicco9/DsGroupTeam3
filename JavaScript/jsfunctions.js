@@ -40,6 +40,7 @@ function initMap() {
             infoWindow.setContent('You are Here!!');
             infoWindow.open(map);
             map.setCenter(pos);
+            console.log ("mezzo : [" + pos.lat + "," + pos.lng + "]");
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -57,10 +58,10 @@ function functionGo () {
 function addName (app) {
     var person = app.results[0];
     if (person.gender=="male") {
-        $("#hello").text("Ciao e Benvenuto" + "<p id=\"nome\"></p>");
+        $("#hello").text("Ciao e Benvenuto ");
         $("#nome").text(person.name.first + " " + person.name.last);
     } else {
-        $("#hello").text("Ciao e Benvenuta" + "<p id=\"nome\"></p>");
+        $("#hello").text("Ciao e Benvenuta ");
         $("#nome").text(person.name.first + " " + person.name.last);
     }
     $("#data").text(person.registered);

@@ -1,18 +1,21 @@
-body{
+body {
     font-style: italic;
     font-size: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px 5px;
 }
-
-p{
+p {
     font-size: 1em;
 }
-
-h1, p#sex {
+h1 {
     font-size: 2em;
 }
-
+.sameline {
+    display: inline;
+}
+h1.sameline {
+    display: inline;
+}
 header {
     text-align: left;
     height:auto; 
@@ -22,42 +25,35 @@ header {
     color: white;
     position: relative;
 }
-
 header div {
     position: absolute;
     width: auto;
     margin-top: 45px;
     right: 20px;
 }
-
 header div img {
     position: relative;
     height: 35px;
 }
-
-header h1, p#sex  {
+header h1, header h1 p {
     margin: 20px 0px;
     width: 100%;
     display: inline-flex;
     align-items: center;
     margin-left: 50px;
 }
-
 header h1 p {
     margin: 0px;
     margin-left: 30px;
 }
-
-main{
+main {
     background:transparent;
     width: 100%;
 }
-
 main nav {
     border-top: 1px solid #e6e6e6;
 }
-
-#geolocate{
+#geolocate {
     height: auto;
     /*background: #4e4d4a;*/ 
     width: 95%;
@@ -67,13 +63,11 @@ main nav {
     display: block;
     font-size: 20px;
 }
-
 #map {
     height: 400px;
     width: 100%;
     margin-top: 2%;
 }
-
 #weatherTable {
     background: #cfe1f9;
     height:auto; 
@@ -83,25 +77,21 @@ main nav {
     font-size: 1.5em;
     text-align: center;
 }
-
 footer {
     width: 100%;
     height: auto;
     background-color: #4e4d4a;
 }
-
 #details {
     height:auto; 
     background: transparent; 
     width:90%; 
     margin: 10px auto;
 }
-
-.social{
+.social {
     width: 50px;
 }
-
-nav ul, footer div#divleft ul{
+nav ul, footer div#divleft ul {
     width:100%;
     list-style: none;
     background-color: #4e4d4a;
@@ -109,7 +99,6 @@ nav ul, footer div#divleft ul{
     padding: 0;
     margin: 0;
 }
-
 nav li, footer div#divleft li {
    display: inline-block;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -119,38 +108,30 @@ nav li, footer div#divleft li {
    padding: 10px 0px;
    cursor: pointer;
 }
-
 nav li:hover {
     background-color: #d26c22;
 }
-
 nav a, footer div#divleft a {
    text-decoration: none;
    color: white;
    text-align: center;
 }
-
 section#details table { 
     width: 100%;
 }
-
 section#details table tr {
     background-color: white;
 }
-
 section#details table tr:nth-child(2), section#details table tr:nth-child(4), section#details table tr:nth-child(6), section#details table tr:nth-child(8) {
     background-color: #e6e6e6;
 }
-
 section#details table tr td {
     display: table-cell;
 }
-
 footer div#divright {
     float: right;
     width: 30%;
 }
-
 footer div#divleft ul {
     margin-top: 40px;
 }
@@ -158,7 +139,6 @@ footer div#divleft li {
     font-size: 2em;
     margin-top: 10px;
 }
-
 footer div#divleft {
     float: left;
     width: 70%;
