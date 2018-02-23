@@ -3,19 +3,23 @@
  */
 var map, infoWindow;
 var pos = {
-    lat: 45.5094965,
-    lng: 9.2315997
+    lat: 43.325231,
+    lng: 23.412342
+    /*lat: 45.5094965,
+    lng: 9.2315997*/
 };
 
 $(document).ready(function(){
+    console.log ("prima : [" + pos.lat + "," + pos.lng + "]");
     var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2";
     $.getJSON(url, function(dataw) {
+        $(document).delay(2000);
         addTable (dataw);
+        functionGo ();
     });
     $.getJSON("https://randomuser.me/api/?results=1", function(datap) {
         addName (datap);
     });
-    functionGo ();
 });
 
 function initMap() {
@@ -43,6 +47,7 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
+    console.log ("dopo : [" + pos.lat + "," + pos.lng + "]");
 }
 
 function functionGo () {
