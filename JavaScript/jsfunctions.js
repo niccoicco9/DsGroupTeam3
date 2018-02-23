@@ -1,4 +1,18 @@
-var map, infoWindow;
+/*
+ * global variable
+ */
+var map, infoWindow, globlalweather, globalperson;
+
+$(document).ready(function(){
+    $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=ee6b293d773f4fcd7e434f79bbc341f2", function(data) {
+        globlalweather = data;
+    });
+    $.getJSON("https://randomuser.me/api/?results=1", function(data) {
+        globalperson = data;
+    });
+    addTable ();
+});
+
 
 function initMap () {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -25,14 +39,13 @@ function initMap () {
     }
 }
 
-function caricaDati (nome, data, arr, titolo) {
+function caricaDati (nome, data, titolo) {
     addName (nome, data, titolo);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition (functionGo, functionError);
     } else {
         functionError
     }
-    addTable (arr);
 }
 
 function addName (nome, data) {
@@ -49,10 +62,11 @@ function functionError (error) {
 }
 
 function addTable (arr) {
-    document.getElementById ("idwind").innerText = arr[0];
-    document.getElementById ("iddescription").innerText = arr[1];
-    document.getElementById ("idpressure").innerText = arr[3];
-    document.getElementById ("idtemperature").innerText = arr[4];
-    document.getElementById ("idsunset").innerText = arr[6];
-    document.getElementById ("idsunrise").innerText = arr[5];
+    var weather = globlalweather.results[0];
+    document.getElementById ("idwind").innerText = weather.wind.speed;
+    document.getElementById ("iddescription").innerText = weather.weather["description"];
+    document.getElementById ("idpressure").innerText = weather.main.pressure;
+    document.getElementById ("idtemperature").innerText = weather.main.temp;
+    document.getElementById ("idsunset").innerText = weather.sys.sunset;
+    document.getElementById ("idsunrise").innerText = weather.sys.sunrise;
 }
