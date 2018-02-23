@@ -1,7 +1,7 @@
 /*
  * global variable
  */
-var map, infoWindow, globlalweather, globalperson;
+var map, infoWindow;
 var pos = {
     lat: 45.5094965,
     lng: 9.2315997
@@ -9,14 +9,13 @@ var pos = {
 
 $(document).ready(function(){
     var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2";
-    $.getJSON(url, function(data) {
-        globlalweather = data;
+    $.getJSON(url, function(dataw) {
+        addTable (dataw);
     });
-    $.getJSON("https://randomuser.me/api/?results=1", function(data) {
-        globalperson = data;
+    $.getJSON("https://randomuser.me/api/?results=1", function(datap) {
+        addName (datap);
     });
-    addName ();
-    addTable ();
+    functionGo ();
 });
 
 function initMap() {
@@ -46,16 +45,20 @@ function initMap() {
     }
 }
 
-function addName () {
-    $("#nome").text("amila fernando");
-    $("#data").text("AMILA FERNANDO");
-    /*var person = globalperson.results[0];
+function functionGo () {
+    $("#idgeocoor").text("[" + pos.lat.toFixed (2) + "," + pos.lng.toFixed (2) + "]");
+}
+
+function addName (app) {
+    var person = app.results[0];
     if (person.gender=="male") {
-        $("nome").text(person.name.first + " " + person.name.last);
+        $("#hello").text("Ciao e Benvenuto" + "<p id=\"nome\"></p>");
+        $("#nome").text(person.name.first + " " + person.name.last);
     } else {
-        $("nome").text(person.name.first + " " + person.name.last);
+        $("#hello").text("Ciao e Benvenuta" + "<p id=\"nome\"></p>");
+        $("#nome").text(person.name.first + " " + person.name.last);
     }
-    $("data").text(person.registered);*/
+    $("#data").text(person.registered);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -64,11 +67,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-function addTable () {
-    $("#wind").text(globlalweather.wind.speed);
-    $("#description").text(globlalweather.weather[2].description);
-    $("#pressure").text(globlalweather.main.pressure);
-    $("#temperature").text(globlalweather.main.temp);
-    $("#sunset").text(globlalweather.sys.sunset);
-    $("#sunrise").text(globlalweather.sys.sunrise);
+function addTable (app) {
+    $("#wind").text(app.wind.speed);
+    $("#description").text(app.weather[0].description);
+    $("#pressure").text(app.main.pressure);
+    $("#temperature").text(app.main.temp);
+    $("#sunset").text(app.sys.sunset);
+    $("#sunrise").text(app.sys.sunrise);
 }
