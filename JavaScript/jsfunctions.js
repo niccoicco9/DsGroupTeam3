@@ -46,7 +46,7 @@ function initMap() {
 }
 
 function functionGo () {
-    $("#idgeocoor").text("[" + pos.lat.toFixed (2) + "," + pos.lng.toFixed (2) + "]");
+    $("#geocoor").text("[" + pos.lat.toFixed (2) + "," + pos.lng.toFixed (2) + "]");
 }
 
 function addName (app) {
