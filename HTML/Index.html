@@ -12,11 +12,17 @@
     </head>
     <body>
         <header>
-            <div><img src="../IMG/logo.svg" alt=""></div>
-            <h1 class="sameline" id="hello">Ciao e Bentornato</h1>
-            <p class="sameline" id="nome"></p>
-            <h1 class="sameline">L'ultima volta che ci hai fatto visita è stata il giorno : </h1>
-            <p class="sameline" id="data"></p>
+            <div id="img"><img src="../IMG/logo.svg" alt=""></div>
+            <div id="welcome">
+                <div id="first">
+                    <h1 id="hello">Ciao e Bentornato</h1>
+                    <p id="nome"></p>
+                </div>
+                <div id="second">
+                    <h1>Ci hai visitato il : </h1>
+                    <p id="data"></p>
+                </div>
+            </div>
         </header>
         <main>
             <nav>
@@ -32,18 +38,17 @@
                 <article id="weatherTable">
                     <table>
                         <tr>
-                            <!--th colspan="2"><img src="https://cdn.pixabay.com/photo/2016/05/04/13/36/mix-1371393_960_720.png" width="50px" height="50px"></th-->
                         </tr>
                         <tr>
                             <td><p>Wind</p></td>
                             <td><p id="wind"></p></td>
                         </tr>
                         <tr>
-                            <td><p>Description</p></td>
+                            <td><p>Cloudness</p></td>
                             <td><p id="description"></p></td>
                         </tr>
                         <tr>
-                            <td><p>Coordinates</p></td>
+                            <td><p>Geo Coords</p></td>
                             <td><p id="geocoor"></p></td>
                         </tr>
                         <tr>
@@ -52,7 +57,7 @@
                         </tr>
                         <tr>
                             <td><p>Temperature</p></td>
-                            <td><p id="temperature"></p></td>
+                            <td><p id="temperatures">---</p></td>
                         </tr>
                         <tr>
                             <td><p>Sunrise</p></td>
@@ -63,6 +68,16 @@
                             <td><p  id="sunset"></p></td>
                         </tr>
                     </table>
+                </article>
+                <article id="citylocation">
+                    <div>
+                        <h1 id="city">Milano</h1>
+                        <h3 id="country">Italia</h3>
+                        <div>
+                            <img id="iconimg" src="https://openweathermap.org/img/w/50d.png" alt="">
+                            <p id="temperature"></p>
+                        </div>
+                    </div>
                 </article>
             </section>
         </main>

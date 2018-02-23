@@ -4,17 +4,8 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px 5px;
 }
-p {
-    font-size: 1em;
-}
-h1 {
+p, h1 {
     font-size: 2em;
-}
-.sameline {
-    display: inline;
-}
-h1.sameline {
-    display: inline;
 }
 header {
     text-align: left;
@@ -25,24 +16,41 @@ header {
     color: white;
     position: relative;
 }
-header div {
-    position: absolute;
-    width: auto;
-    margin-top: 45px;
-    right: 20px;
+header div#img {
+    width: 30%;
+    float: right;
+    height: 100px;
 }
-header div img {
+header div#img img {
     position: relative;
     height: 35px;
+    margin-top: 5%;
 }
-header h1, header h1 p {
+header div#welcome {
+    width: 70%;
+    float: left;
+    position: relative;
+    height: 100px;
+}
+header div#welcome div {
+    position: absolute;
+}
+header div#welcome div#first {
+    top: 0px;
+    margin-top: 1%;
+}
+header div#welcome div#second {
+    bottom: 0px;
+    margin-bottom: 1%;
+}
+header div#welcome div h1, header div#welcome div p {
     margin: 20px 0px;
     width: 100%;
-    display: inline-flex;
+    display: inline;
     align-items: center;
     margin-left: 50px;
 }
-header h1 p {
+header div#welcome h1 p {
     margin: 0px;
     margin-left: 30px;
 }
@@ -72,10 +80,32 @@ main nav {
     background: #cfe1f9;
     height:auto; 
     background:#CCC; 
-    width:40%;
+    width: 50%;
     margin-top: 2.5% ;
     font-size: 1.5em;
     text-align: center;
+    float: left;
+}
+article#citylocation {
+    width: 50%;
+    float: right;
+    margin-top: 2.5%;
+}
+article#citylocation div {
+    width: 100%;
+    height: 100%;
+}
+article#citylocation div * {
+    text-align: center;
+}
+article#citylocation div h1 {
+    font-size: 5em;
+}
+article#citylocation div h3 {
+    font-size: 3em;
+}
+article#citylocation div div p {
+    font-size: 2em;
 }
 footer {
     width: 100%;
@@ -143,7 +173,7 @@ footer div#divleft {
     float: left;
     width: 70%;
 }
-footer:after {
+header:after, footer:after, section#details:after {
     content: "";
     display: table;
     clear: both;

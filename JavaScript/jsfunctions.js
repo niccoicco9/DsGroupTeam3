@@ -10,7 +10,6 @@ var pos = {
 };
 
 $(document).ready(function(){
-    console.log ("prima : [" + pos.lat + "," + pos.lng + "]");
     var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2";
     $.getJSON(url, function(dataw) {
         $(document).delay(2000);
@@ -19,6 +18,12 @@ $(document).ready(function(){
     });
     $.getJSON("https://randomuser.me/api/?results=1", function(datap) {
         addName (datap);
+    });
+
+    setTimeout( function() {}, 10000);
+    url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + pos.lat + "," + pos.lng + "&key=AIzaSyD-fxKwF1sWWcV49zr9q0cT97l6fIqZj-E";
+    $.getJSON(url, function(datal) {
+        addLocation (datal);
     });
 });
 
@@ -40,7 +45,6 @@ function initMap() {
             infoWindow.setContent('You are Here!!');
             infoWindow.open(map);
             map.setCenter(pos);
-            console.log ("mezzo : [" + pos.lat + "," + pos.lng + "]");
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -48,23 +52,26 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-    console.log ("dopo : [" + pos.lat + "," + pos.lng + "]");
 }
 
 function functionGo () {
-    $("#geocoor").text("[" + pos.lat.toFixed (2) + "," + pos.lng.toFixed (2) + "]");
+    setTimeout( function() {
+        $("#geocoor").text("[" + pos.lat.toFixed (2) + "," + pos.lng.toFixed (2) + "]");
+    }, 10000);
+    
 }
 
 function addName (app) {
-    var person = app.results[0];
-    if (person.gender=="male") {
+    if (app.results[0].gender=="male") {
         $("#hello").text("Ciao e Benvenuto ");
-        $("#nome").text(person.name.first + " " + person.name.last);
     } else {
         $("#hello").text("Ciao e Benvenuta ");
-        $("#nome").text(person.name.first + " " + person.name.last);
     }
-    $("#data").text(person.registered);
+    $("#nome").text(app.results[0].name.first + " " + app.results[0].name.last);
+    $("#data").text((app.results[0].registered).split(" ")[0]);
+}
+
+function addLocation (app) {
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -74,10 +81,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function addTable (app) {
-    $("#wind").text(app.wind.speed);
+    $("#wind").text(app.wind.speed + " m/s");
     $("#description").text(app.weather[0].description);
-    $("#pressure").text(app.main.pressure);
-    $("#temperature").text(app.main.temp);
-    $("#sunset").text(app.sys.sunset);
-    $("#sunrise").text(app.sys.sunrise);
+    $("#pressure").text(app.main.pressure + " hpa");
+    $("#temperature").text((app.main.temp-272.15).toFixed (0) + "°C");
+    $("#iconimg").text("https://openweathermap.org/img/w/" + app.weather[0].icon + ".png");
+    $("#sunset").text((new Date(app.sys.sunset*1000)).toLocaleTimeString());
+    $("#sunrise").text((new Date(app.sys.sunrise*1000)).toLocaleTimeString());
 }
