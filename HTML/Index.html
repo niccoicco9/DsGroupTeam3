@@ -29,9 +29,9 @@
                 <ul>
                     <li ><a href="../HTML/index.html">Home</a></li>
                     <li ><a href="../HTML/index.html">Weather</a></li>
-                    <li ><a href="../HTML/index.html">Contact </a></li>                                           
+                    <li ><a href="../HTML/index.html">Contact </a></li>
                 </ul>
-            </nav> 
+            </nav>
             <div id="map"></div>
             </section>
             <section id="details">
@@ -70,14 +70,163 @@
                     </table>
                 </article>
                 <article id="citylocation">
-                    <div>
-                        <h1 id="city"></h1>
-                        <h3 id="country"></h3>
-                        <div>
-                            <img id="iconimg" src="" alt="">
-                            <p id="temperature"></p>
+                    <div id="maincontainer">
+                        <div id="containertexth1">
+                            <h1 id="city"></h1>
+                        </div>
+                        <div id="containertexth3">
+                            <h3 id="country"></h3>
+                        </div>
+                        <div id="containerthird">
+                            <div id="containerimg">
+                                <img id="iconimg" src="" alt="">
+                            </div>
+                            <div id="containertextp">
+                                <p id="temperature"></p>
+                            </div>
                         </div>
                     </div>
+                </article>
+                <article id="tableDays">
+                    <table>
+                        <tr>
+                            <th>Day</th>
+                            <td id="day1"></td>
+                            <td id="day2"></td>
+                            <td id="day3"></td>
+                            <td id="day4"></td>
+                            <td id="day5"></td>
+                            <td id="day6"></td>
+                        </tr>
+                        <tr>
+                            <th>Min Temperature</th>
+                            <td id="mintemperature1"></td>
+                            <td id="mintemperature2"></td>
+                            <td id="mintemperature3"></td>
+                            <td id="mintemperature4"></td>
+                            <td id="mintemperature5"></td>
+                            <td id="mintemperature6"></td>
+                        </tr>
+                        <tr>
+                            <th>Max Temperature</th>
+                            <td id="maxtemperature1"></td>
+                            <td id="maxtemperature2"></td>
+                            <td id="maxtemperature3"></td>
+                            <td id="maxtemperature4"></td>
+                            <td id="maxtemperature5"></td>
+                            <td id="maxtemperature6"></td>
+                        </tr>
+                        <tr>
+                            <th>Day Temperature</th>
+                            <td id="daytemperature1"></td>
+                            <td id="daytemperature2"></td>
+                            <td id="daytemperature3"></td>
+                            <td id="daytemperature4"></td>
+                            <td id="daytemperature5"></td>
+                            <td id="daytemperature6"></td>
+                        </tr>
+                        <tr>
+                            <th>Morning Temperature</th>
+                            <td id="morningtemperature1"></td>
+                            <td id="morningtemperature2"></td>
+                            <td id="morningtemperature3"></td>
+                            <td id="morningtemperature4"></td>
+                            <td id="morningtemperature5"></td>
+                            <td id="morningtemperature6"></td>
+                        </tr>
+                        <tr>
+                            <th>Evening Temperature</th>
+                            <td id="eveningtemperature1"></td>
+                            <td id="eveningtemperature2"></td>
+                            <td id="eveningtemperature3"></td>
+                            <td id="eveningtemperature4"></td>
+                            <td id="eveningtemperature5"></td>
+                            <td id="eveningtemperature6"></td>
+                        </tr>
+                        <tr>
+                            <th>Night Temperature</th>
+                            <td id="nighttemperature1"></td>
+                            <td id="nighttemperature2"></td>
+                            <td id="nighttemperature3"></td>
+                            <td id="nighttemperature4"></td>
+                            <td id="nighttemperature5"></td>
+                            <td id="nighttemperature6"></td>
+                        </tr>
+                        <tr>
+                            <th>Atmospheric Pressure</th>
+                            <td id="pressure1"></td>
+                            <td id="pressure2"></td>
+                            <td id="pressure3"></td>
+                            <td id="pressure4"></td>
+                            <td id="pressure5"></td>
+                            <td id="pressure6"></td>
+                        </tr>
+                        <tr>
+                            <th>Cloudiness</th>
+                            <td id="cloudness1"></td>
+                            <td id="cloudness2"></td>
+                            <td id="cloudness3"></td>
+                            <td id="cloudness4"></td>
+                            <td id="cloudness5"></td>
+                            <td id="cloudness6"></td>
+                        </tr>
+                        <tr>
+
+                            <th>Humidity</th>
+                            <td id="humidity1"></td>
+                            <td id="humidity2"></td>
+                            <td id="humidity3"></td>
+                            <td id="humidity4"></td>
+                            <td id="humidity5"></td>
+                            <td id="humidity6"></td>
+                        </tr>
+                        <tr>
+                            <th id=""></th>
+                            <td id="icon1"></td>
+                            <td id="icon2"></td>
+                            <td id="icon3"></td>
+                            <td id="icon4"></td>
+                            <td id="icon5"></td>
+                            <td id="icon6"></td>
+                        </tr>
+                        <tr>
+                            <th>Weather</th>
+                            <td id="weather1"></td>
+                            <td id="weather2"></td>
+                            <td id="weather3"></td>
+                            <td id="weather4"></td>
+                            <td id="weather5"></td>
+                            <td id="weather6"></td>
+
+                        </tr>
+                        <tr>
+                            <th>Weather Condition</th>
+                            <td id="weathercondition1"></td>
+                            <td id="weathercondition2"></td>
+                            <td id="weathercondition3"></td>
+                            <td id="weathercondition4"></td>
+                            <td id="weathercondition5"></td>
+                            <td id="weathercondition6"></td>
+                        </tr>
+                        <tr>
+                            <th>Wind Speed</th>
+                            <td id="windspeed1"></td>
+                            <td id="windspeed2"></td>
+                            <td id="windspeed3"></td>
+                            <td id="windspeed4"></td>
+                            <td id="windspeed5"></td>
+                            <td id="windspeed6"></td>
+                        </tr>
+                        <tr>
+                            <th>Wind direction</th>
+                            <td id="windirection1"></td>
+                            <td id="windirection2"></td>
+                            <td id="windirection3"></td>
+                            <td id="windirection4"></td>
+                            <td id="windirection5"></td>
+                            <td id="windirection6"></td>
+                        </tr>
+                    </table>
                 </article>
             </section>
         </main>
@@ -86,7 +235,7 @@
                 <ul>
                     <li ><a href="../HTML/index.html">Home</a></li>
                     <li ><a href="../HTML/index.html">Weather</a></li>
-                    <li ><a href="../HTML/index.html">Contact </a></li>                                           
+                    <li ><a href="../HTML/index.html">Contact </a></li>
                 </ul>
             </div>
             <div id="divright">
@@ -110,6 +259,6 @@
                     </tr>
                 </table>
         </div>
-        </footer>   
+        </footer>
     </body>
 </html>

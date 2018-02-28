@@ -91,21 +91,35 @@ article#citylocation {
     float: right;
     margin-top: 2.5%;
 }
-article#citylocation div {
+article#citylocation div#maincontainer {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column
 }
-article#citylocation div * {
+article#citylocation div#maincontainer * {
     text-align: center;
 }
-article#citylocation div h1 {
+article#citylocation div#maincontainer div#containertexth1 h1 {
     font-size: 5em;
 }
-article#citylocation div h3 {
+article#citylocation div#maincontainer div#containertexth3 h3 {
     font-size: 3em;
 }
-article#citylocation div div p {
-    font-size: 2em;
+article#citylocation div#maincontainer div#containerthird {
+    display: flex;
+    flex-direction: row;
+}
+article#citylocation div#maincontainer div#containerthird div#containertextp, article#citylocation div#maincontainer div#containerthird div#containerimg {
+    width: 50%;
+}
+article#citylocation div#maincontainer div#containerthird div#containertextp p {
+    font-size: 5em;
+    float: left;
+}
+article#citylocation div#maincontainer div#containerthird div#containerimg img {
+    float: right;
+    height: 100%;
 }
 footer {
     width: 100%;
@@ -173,7 +187,7 @@ footer div#divleft {
     float: left;
     width: 70%;
 }
-header:after, footer:after, section#details:after {
+header:after, footer:after, section#details:after, article#citylocation div#maincontainer div#containerthird div#containertextp p:after, article#citylocation div#maincontainer div#containerthird div#containerimg img:after {
     content: "";
     display: table;
     clear: both;
