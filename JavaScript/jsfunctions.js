@@ -33,7 +33,6 @@ $(document).ready(function(){
         $.getJSON(url, function(datal) {
             addLocation (datal);
         });
-        $("#loader").css("display", "none");
     }, 10000);
 });
 function initMap() {
@@ -54,6 +53,9 @@ function initMap() {
             infoWindow.setContent('You are Here!!');
             infoWindow.open(map);
             map.setCenter(pos);
+            setTimeout( function() {
+                $("#loader").css("display", "none");
+            }, 4500);
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -80,7 +82,7 @@ function addLocation (app) {
 }
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.setContent(browserHasGeolocation ? window.location.replace("../HTML/error.html") : 'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
 function addTable (app) {
