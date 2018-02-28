@@ -217,15 +217,103 @@ header::after, footer::after, article#citylocation div#maincontainer div#contain
     display: table;
     clear: both;
 }
-
-/* dimensioni dello screen */
-
-@media screen and (max-width: 1200px) {}
-@media screen and (max-width: 1100px) {}
-@media screen and (max-width: 992px) {}
-@media screen and (max-width: 765px) {}
-@media screen and (max-width: 545px) {}
-@media screen and (max-width: 460px) {}
-@media screen and (max-width: 320px) {}
-@media screen and (max-height: 545px) {}
-@media screen and (max-height: 400px) {}
+main div.subcontainer {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+main div.subcontainer div#textcontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+main div.subcontainer div#textcontainer h1 {
+    width: 30%;
+    font-size: 4em;
+}
+main div.subcontainer div#textcontainer p {
+    width: 70%;
+    font-size: 2.5em;
+}
+main div.subcontainer form {
+    display: flex;
+    flex-direction: column;
+}
+main div.subcontainer form div.minicontainer p {
+    width: 50%;
+}
+main div.subcontainer form div.minicontainer p input, main div.subcontainer form div.minicontainer p textarea {
+    width: 90%;
+    font-size: 2em;
+}
+main div.subcontainer form div#linefirst, main div.subcontainer form div#linesecond, main div.subcontainer form div#linefourth {
+    display: flex;
+    flex-direction: row;
+}
+main div.subcontainer form div#linethird p, main div.subcontainer form div#linethird p textarea {
+    width: 100%;
+}
+main div.subcontainer form div#linethird p textarea {
+    resize: none;
+}
+main div.subcontainer form div#linefourth p input {
+    width: 10px;
+}
+main div.subcontainer form div#linefourth p label, main div.subcontainer form div#linefourth p {
+    width: 100%;
+}
+main div.subcontainer form div#linefourth p label a, 
+main div.subcontainer div.conttext p a {
+    text-decoration: none;
+    color: green;
+}
+main div.subcontainer form div#linefifth input {
+    margin-top: 3%;
+    margin-right: 3%;
+    width: 15%;
+    padding: 5px;
+    border-radius: 20%;
+    border: 1px solid #4e4d4a;
+    background-color: #4e4d4a;
+    color: #ffffff;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+main div.subcontainer form div#linefifth {
+    margin-bottom: 10%;
+}
+main div.subcontainer form div#linefifth input:hover {
+    margin-top: 3%;
+    margin-right: 3%;
+    width: 15%;
+    padding: 5px;
+    border-radius: 20%;
+    border: 1px solid #4e4d4a;
+    background-color: #ffffff;
+    color: #4e4d4a;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+main div.subcontainer div.conttext {
+    display: flex;
+    flex-direction: row;
+}
+main div.subcontainer div.conttext h1 {
+    width: 30%;
+    font-size: 3.8em;
+}
+main div.subcontainer div.conttext p {
+    width: 70%;
+    font-size: 2.5em;
+}
+main div.subcontainer div.conttext h1.h1withstrong {
+    display: flex;
+    flex-direction: column;
+}
+main div.subcontainer div.conttext h1.h1withstrong strong {
+    font-size: 0.5em;
+    width: 100%;
+    margin-top: 3%;
+}
