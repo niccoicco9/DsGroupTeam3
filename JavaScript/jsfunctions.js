@@ -84,7 +84,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 function addTable (app) {
-    $("#wind").text(app.wind.speed + " m/s " + windDirection(app.wind.deg));
+    $("#wind").text(app.wind.speed + " m/s " + windDirection(app.wind.deg.toFixed (2)));
     $("#description").text(app.weather[0].description);
     $("#pressure").text(app.main.pressure + " hpa");
     $("#humidity").text(app.main.humidity + "%");
@@ -109,7 +109,7 @@ function addTableForecast (app) {
         $("#weather"+cont).text(app.list[cont].weather[0].main);
         $("#weathercondition"+cont).text(app.list[cont].weather[0].description);
         $("#windspeed"+cont).text(app.list[cont].speed + " m/s");
-        $("#windirection"+cont).text(windDirection(app.list[cont].deg));
+        $("#windirection"+cont).text(windDirection(app.list[cont].deg.toFixed (2)));
     }
 }
 function getNextDay (app) {
