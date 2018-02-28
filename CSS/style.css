@@ -4,6 +4,18 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px 5px;
 }
+div#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: initial;
+    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
+    background-size: cover;
+}
 p, h1 {
     font-size: 2em;
 }
@@ -126,7 +138,7 @@ footer {
     height: auto;
     background-color: #4e4d4a;
 }
-#details {
+#details, section#detailsweather {
     height:auto; 
     background: transparent; 
     width:90%; 
@@ -166,11 +178,24 @@ section#details table {
 section#details table tr {
     background-color: white;
 }
-section#details table tr:nth-child(2), section#details table tr:nth-child(4), section#details table tr:nth-child(6), section#details table tr:nth-child(8) {
+section#details table tr:nth-child(2), section#details table tr:nth-child(4), section#details table tr:nth-child(6), section#detailsweather table tr:nth-child(2), section#detailsweather table tr:nth-child(4), section#detailsweather table tr:nth-child(6), section#detailsweather table tr:nth-child(8), section#detailsweather table tr:nth-child(10), section#detailsweather table tr:nth-child(12), section#detailsweather table tr:nth-child(14) {
     background-color: #e6e6e6;
 }
-section#details table tr td {
+section#detailsweather  {
+    margin: 5% auto;
+}
+section#details table tr td, section#detailsweather table tr td {
     display: table-cell;
+}
+section#detailsweather article#tableDays table {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    border-collapse: collapse;
+}
+section#detailsweather article#tableDays table tr td {
+    border-right: 1px solid #ffffff; 
+    border-left: 1px solid #ffffff;
 }
 footer div#divright {
     float: right;
@@ -187,7 +212,7 @@ footer div#divleft {
     float: left;
     width: 70%;
 }
-header:after, footer:after, section#details:after, article#citylocation div#maincontainer div#containerthird div#containertextp p:after, article#citylocation div#maincontainer div#containerthird div#containerimg img:after {
+header::after, footer::after, article#citylocation div#maincontainer div#containerthird div#containertextp p::after, article#citylocation div#maincontainer div#containerthird div#containerimg img::after, section#details::after {
     content: "";
     display: table;
     clear: both;

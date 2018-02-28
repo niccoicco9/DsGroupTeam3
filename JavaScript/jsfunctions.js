@@ -1,5 +1,6 @@
 /*
  * global variable
+ * jshint esversion: 6
  */
 var map, infoWindow;
 var pos = {
@@ -32,6 +33,7 @@ $(document).ready(function(){
         $.getJSON(url, function(datal) {
             addLocation (datal);
         });
+        $("#loader").css("display", "none");
     }, 10000);
 });
 function initMap() {
@@ -82,7 +84,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 function addTable (app) {
-    $("#wind").text(app.wind.speed + " m/s" + "\n" + windDirection(app.wind.deg));
+    $("#wind").text(app.wind.speed + " m/s " + windDirection(app.wind.deg));
     $("#description").text(app.weather[0].description);
     $("#pressure").text(app.main.pressure + " hpa");
     $("#humidity").text(app.main.humidity + "%");
@@ -92,27 +94,26 @@ function addTable (app) {
     $("#temperature").text((app.main.temp-274.15).toFixed (0) + "°C");
 }
 function addTableForecast (app) {
-    console.log (app); 
     for (var cont=1;cont<7;cont++) {
         $("#day"+cont).text(getNextDay(app.list[cont].dt*1000));
-        $("#mintemperature"+cont).text(app.list[cont].temp.min);
-        $("#maxtemperature"+cont).text(app.list[cont].temp.max);
-        $("#daytemperature"+cont).text(app.list[cont].temp.day);
-        $("#morningtemperature"+cont).text(app.list[cont].temp.morn);
-        $("#eveningtemperature"+cont).text(app.list[cont].temp.eve);
-        $("#nighttemperature"+cont).text(app.list[cont].temp.night);
-        $("#pressure"+cont).text(app.list[cont].pressure);
+        $("#mintemperature"+cont).text((app.list[cont].temp.min-274.15).toFixed (0) + "°C");
+        $("#maxtemperature"+cont).text((app.list[cont].temp.max-274.15).toFixed (0) + "°C");
+        $("#daytemperature"+cont).text((app.list[cont].temp.day-274.15).toFixed (0) + "°C");
+        $("#morningtemperature"+cont).text((app.list[cont].temp.morn-274.15).toFixed (0) + "°C");
+        $("#eveningtemperature"+cont).text((app.list[cont].temp.eve-274.15).toFixed (0) + "°C");
+        $("#nighttemperature"+cont).text((app.list[cont].temp.night-274.15).toFixed (0) + "°C");
+        $("#pressure"+cont).text(app.list[cont].pressure + " hpa");
         $("#cloudness"+cont).text(app.list[cont].clouds);
-        $("#humidity"+cont).text(app.list[cont].humidity);
-        $("#icon"+cont).text(app.list[cont].dt);
+        $("#humidity"+cont).text(app.list[cont].humidity + "%");
+        $("#iconimg"+cont).attr("src", "https://openweathermap.org/img/w/" + app.list[cont].weather[0].icon + ".png");
         $("#weather"+cont).text(app.list[cont].weather[0].main);
         $("#weathercondition"+cont).text(app.list[cont].weather[0].description);
-        $("#windspeed"+cont).text(app.list[cont].speed);
-        $("#windirection"+cont).text(app.list[cont].deg);
+        $("#windspeed"+cont).text(app.list[cont].speed + " m/s");
+        $("#windirection"+cont).text(windDirection(app.list[cont].deg));
     }
 }
 function getNextDay (app) {
-   var date = new Date(app);
+   var date = moment(app);
    var formatted = date.format('ddd DD/MM/YYYY');
    return formatted;
 }
