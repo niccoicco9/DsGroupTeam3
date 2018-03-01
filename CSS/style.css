@@ -226,6 +226,7 @@ main div.subcontainer div#textcontainer {
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin: 5% 0%;
 }
 main div.subcontainer div#textcontainer h1 {
     width: 30%;
@@ -298,6 +299,13 @@ main div.subcontainer form div#linefifth input:hover {
 main div.subcontainer div.conttext {
     display: flex;
     flex-direction: row;
+    margin: 3% 0%;
+}
+main div.subcontainer div.conttext:first-child {
+    margin-top: 5%;
+}
+main div.subcontainer div.conttext:last-child {
+    margin-bottom: 5%;
 }
 main div.subcontainer div.conttext h1 {
     width: 30%;
