@@ -177,7 +177,7 @@ section#details table {
 section#details table tr {
     background-color: white;
 }
-section#details table tr:nth-child(2), section#details table tr:nth-child(4), section#details table tr:nth-child(6), section#detailsweather table tr:nth-child(2), section#detailsweather table tr:nth-child(4), section#detailsweather table tr:nth-child(6), section#detailsweather table tr:nth-child(8), section#detailsweather table tr:nth-child(10), section#detailsweather table tr:nth-child(12), section#detailsweather table tr:nth-child(14) {
+section#details table tr:nth-child(2n+2), section#detailsweather table tr:nth-child(2n+2) {
     background-color: #e6e6e6;
 }
 section#detailsweather  {
