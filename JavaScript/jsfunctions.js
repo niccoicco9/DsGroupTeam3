@@ -83,7 +83,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 function addTable (app) {
-    $("#wind").text(app.wind.speed + " m/s " /*+ windDirection((app.wind.deg).toFixed (2))*/);
+    $("#wind").text(app.wind.speed + " m/s " + windDirection((app.wind.deg).toFixed (2)));
     $("#description").text(app.weather[0].description);
     $("#pressure").text(app.main.pressure + " hpa");
     $("#humidity").text(app.main.humidity + "%");
