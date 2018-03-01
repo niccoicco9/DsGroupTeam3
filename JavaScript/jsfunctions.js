@@ -74,7 +74,8 @@ function addName (app) {
         $("#hello").text("Ciao e Benvenuta ");
     }
     $("#nome").text(app.results[0].name.first + " " + app.results[0].name.last);
-    $("#data").text((app.results[0].registered).split(" ")[0]);
+    //$("#data").text((app.results[0].registered).split(" ")[0]);
+    $("#data").text((app.results[0].registered));
 }
 function addLocation (app) {
     $("#city").text(app.results[0].address_components[2].long_name);
