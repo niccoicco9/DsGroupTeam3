@@ -9,22 +9,18 @@ var pos = {
     /*lat: 45.5094965,
     lng: 9.2315997*/
 };
-$(document).ready(function(){
-    setTimeout( function() {
-        var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2";
-        $.getJSON(url, function(dataw) {
-            $(document).delay(2000);
-            addTable (dataw);
-            functionGo ();
-        });
-    }, 10000);
-    setTimeout( function() {
-        var url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2&";
-        $.getJSON(url, function(dataf) {
-            $(document).delay(2000);
-            addTableForecast (dataf);
-        });
-    }, 10000);
+$(document).ready(function() {
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2";
+    $.getJSON(url, function(dataw) {
+        $(document).delay(2000);
+        addTable (dataw);
+        functionGo ();
+    });
+    var url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2&";
+    $.getJSON(url, function(dataf) {
+        $(document).delay(2000);
+        addTableForecast (dataf);
+    });
     $.getJSON("https://randomuser.me/api/?results=1", function(datap) {
         addName (datap);
     });
