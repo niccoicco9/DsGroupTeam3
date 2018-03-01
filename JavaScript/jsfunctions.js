@@ -41,7 +41,7 @@ function initMap() {
             lat: pos.lat,
             lng: pos.lng
         },
-        zoom: 14
+        zoom: 15
     });
     infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
@@ -55,7 +55,7 @@ function initMap() {
             map.setCenter(pos);
             setTimeout( function() {
                 $("#loader").css("display", "none");
-            }, 4500);
+            }, 5000);
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
