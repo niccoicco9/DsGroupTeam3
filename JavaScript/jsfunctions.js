@@ -9,6 +9,9 @@ var pos = {
     /*lat: 45.5094965,
     lng: 9.2315997*/
 };
+
+
+
 $(document).ready(function() {
     var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2";
     $.getJSON(url, function(dataw) {
@@ -31,6 +34,9 @@ $(document).ready(function() {
         });
     }, 10000);
 });
+
+
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -60,9 +66,15 @@ function initMap() {
         handleLocationError(false, infoWindow, map.getCenter());
     }
 }
+
+
+
 function functionGo () {
     $("#geocoor").text("[" + pos.lat.toFixed (2) + "," + pos.lng.toFixed (2) + "]");
 }
+
+
+
 function addName (app) {
     if (app.results[0].gender=="male") {
         $("#hello").text("Ciao e Benvenuto ");
@@ -73,15 +85,24 @@ function addName (app) {
     //$("#data").text((app.results[0].registered).split(" ")[0]);
     $("#data").text((app.results[0].registered));
 }
+
+
+
 function addLocation (app) {
     $("#city").text(app.results[0].address_components[2].long_name);
     $("#country").text(app.results[0].address_components[6].long_name);
 }
+
+
+
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ? window.location.replace("../HTML/error.html") : 'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+
+
 function addTable (app) {
     $("#wind").text(app.wind.speed + " m/s " + windDirection((app.wind.deg).toFixed (2)));
     $("#description").text(app.weather[0].description);
@@ -92,6 +113,9 @@ function addTable (app) {
     $("#sunrise").text((new Date(app.sys.sunrise*1000)).toLocaleTimeString());
     $("#temperature").text((app.main.temp-274.15).toFixed (0) + "°C");
 }
+
+
+
 function addTableForecast (app) {
     for (var cont=1;cont<7;cont++) {
         $("#day"+cont).text(getNextDay(app.list[cont].dt*1000));
@@ -111,11 +135,17 @@ function addTableForecast (app) {
         $("#windirection"+cont).text(windDirection(app.list[cont].deg.toFixed (2)));
     }
 }
+
+
+
 function getNextDay (app) {
    var date = moment(app);
    var formatted = date.format('ddd DD/MM/YYYY');
    return formatted;
 }
+
+
+
 function windDirection (deg) {
     var north = "North";
     var est = "Est";
