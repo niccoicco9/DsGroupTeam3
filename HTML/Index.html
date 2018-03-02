@@ -6,35 +6,77 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Home</title>
         <link rel="stylesheet" href="../CSS/style.css">
-        <script src="../JavaScript/jquery-3.3.1.min.js"></script>
-        <script src="../node_modules/moment/min/moment-with-locales.js"></script>
-        <script src="../JavaScript/jsfunctions.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-fxKwF1sWWcV49zr9q0cT97l6fIqZj-E&callback=initMap"></script>
+        <link rel="stylesheet" href="../node_modules/tether/dist/css/tether.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
     <body>
-        <div id="loader"></div>
+        <!--<div id="loader"></div>
         <header>
             <div id="img"><img src="../IMG/logo.svg" alt=""></div>
-            <div id="welcome">
-                <div id="first">
-                    <h1 id="hello">Ciao e Bentornato</h1>
-                    <p id="nome"></p>
-                </div>
-                <div id="second">
-                    <h1>Ci hai visitato il : </h1>
-                    <p id="data"></p>
-                </div>
-            </div>
-        </header>
-        <main>
-            <nav>
-                <ul>
-                    <li ><a href="../HTML/index.html">Home</a></li>
-                    <li ><a href="../HTML/contact.html">Contact</a></li>
-                    <li ><a href="../HTML/about.html">About Us</a></li>
-                </ul>
-            </nav>
-            <div id="map"></div>
+
+        </header>-->
+        <main class="container-fluid"> 
+
+            <!--
+                <div id="hello" class="card-header bg-warning">
+                            Ciao e Bentornato
+                            <div id="nome"></div>
+                        </div>
+                        <div id="second" class="card-body bg-warning">
+                            -<h1>Ci hai visitato il : </h1>
+                            <p id="data"></p>
+                        </div>
+             -->
+                
+
+                
+            
+             <!-- Inserisco la riga dove sono presenti la mappa e i dati personali -->
+            <section class="row mx-2 my-1">
+                <!-- Mappa -->
+                <article class="col-md col-md-offset-1">
+                    <div id="map" style="width:100%;"></div>
+                </article>
+                
+                <!-- Dati personali -->
+                <article class="col-md col-md-offset-1">
+                    <!-- Bentornato persona -->
+                    <div class="card mx-auto my-2">
+                        <!-- Header della carta -->
+                        <div class="card-header">Bentornato</div>
+
+                        <!-- Body della carta -->
+                        <div class="card-body row pt-1">
+                            <figure class="col-md-4">
+                                <img src="../IMG/user.png" alt="Utente" class="image-fluid">
+                            </figure>
+                            <div class="col-md-8 contenutoCards">
+                                <div id="nome" class="mr-2"></div>
+                                <div class="sottotitoloCards mr-2">nome e cognome</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ultimo accesso -->
+                    <div class="card mx-auto my-2">
+                        <!-- Header della carta -->
+                        <div class="card-header">Ultimo accesso</div>
+
+                        <!-- Body della carta -->
+                        <div class="card-body row pt-1">
+                            <figure class="col-md-4">
+                                <img id="imgWatch" src="../IMG/watch.png" alt="Ultimo accesso" class="image-fluid px-2 py-2">
+                            </figure>
+                            <div class="col-md-8 contenutoCards">
+                                <div id="data" class="dimensioneCorpoCard mr-2"></div>
+                                <div class="sottotitoloCards mr-2">data ed ora</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--
+
             </section>
             <section id="details">
                 <article id="weatherTable">
@@ -263,6 +305,13 @@
                     </tr>
                 </table>
             </div>
-        </footer>
+        </footer> -->
+
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/moment/min/moment-with-locales.js"></script>
+        <script src="../node_modules/tether/dist/js/tether.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../JavaScript/jsfunctions.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-fxKwF1sWWcV49zr9q0cT97l6fIqZj-E&callback=initMap"></script>
     </body>
 </html>
