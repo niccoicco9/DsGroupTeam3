@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/sorrentmutie/DsGroupTeam3#readme",
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.3.1",
     "moment": "^2.20.1"
   }
 }
