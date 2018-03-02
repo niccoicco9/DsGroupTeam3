@@ -97,6 +97,9 @@ header div#welcome h1 p {
 .sposta{
     margin-left: 20px;
 }
+li{
+    margin-right:10px; 
+}
 
 /* body {
      font-style: italic;
