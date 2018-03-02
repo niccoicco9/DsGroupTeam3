@@ -6,10 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Home</title>
         <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="stylesheet" href="../node_modules/tether/dist/css/tether.css">
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
     <body>
-        <!-- <div id="loader"></div> -->
         <header>
             <nav class="navbar navbar-toggleable-md navbar-light bg-warning">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
@@ -34,9 +34,72 @@
                 </div>
             </nav>
         </header>
-        <!--<main>
-            <div id="map"></div>
+
+        <main class="container-fluid"> 
+
+             <!-- Inserisco la riga dove sono presenti la mappa e i dati personali -->
+            <section class="row mx-2 my-1">
+                <!-- Mappa -->
+                <article class="col-md col-md-offset-1">
+                    <div id="map" style="width:100%;"></div>
+                </article>
+                
+                <!-- Dati personali -->
+                <article class="col-md col-md-offset-1">
+                    <!-- Bentornato persona -->
+                    <div class="card mx-auto my-2">
+                        <!-- Header della carta -->
+                        <div class="card-header">Bentornato</div>
+
+                        <!-- Body della carta -->
+                        <div class="card-body row pt-1">
+                            <figure class="col-md-4">
+                                <img src="../IMG/user.png" alt="Utente" class="image-fluid">
+                            </figure>
+                            <div class="col-md-8 contenutoCards">
+                                <div id="nome" class="mr-2"></div>
+                                <div class="sottotitoloCards mr-2">nome e cognome</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ultimo accesso -->
+                    <div class="card mx-auto my-2">
+                        <!-- Header della carta -->
+                        <div class="card-header">Ultimo accesso</div>
+
+                        <!-- Body della carta -->
+                        <div class="card-body row pt-1">
+                            <figure class="col-md-4">
+                                <img id="imgWatch" src="../IMG/watch.png" alt="Ultimo accesso" class="image-fluid px-2 py-2">
+                            </figure>
+                            <div class="col-md-8 contenutoCards">
+                                <div id="data" class="dimensioneCorpoCard mr-2"></div>
+                                <div class="sottotitoloCards mr-2">data ed ora</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </section>
+        <!-- <div id="loader"></div> -->
+        
+    
+            
+            
+            <!-- Posizione attuale -->
+            <section class="row">
+                <!-- Riepilogo meteo attuale -->
+                <article class="col-md-4"></article>
+
+                <!-- Previsioni meteo settimanali -->
+                <article class="col-md-8"></article>
+            </section>
+
+
+
+
+
+            <!--   VANESSA
             <section id="details">
                 <article id="weatherTable">
                     <table>
@@ -91,6 +154,9 @@
                     </div>
                 </article>
             </section>
+        VANESSA-->
+
+        <!--
             <section id="detailsweather">
                 <article id="tableDays">
                     <table>
@@ -265,8 +331,10 @@
                 </table>
             </div>
         </footer> -->
+
         <script src="../node_modules/jquery/dist/jquery.js"></script>
         <script src="../node_modules/moment/min/moment-with-locales.js"></script>
+        <script src="../node_modules/tether/dist/js/tether.js"></script>
         <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="../JavaScript/jsfunctions.js"></script>

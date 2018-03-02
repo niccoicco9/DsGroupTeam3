@@ -1,8 +1,50 @@
-/*Barra di navigazione*/
+/**********************************PRIMA SECTION*******************************/
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+.sottotitoloCards{
+    font-variant: small-caps;
+    color: #2c3e50;
+}
+
+.contenutoCards{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#nome{
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+/*body {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 5px;
+}
+/*div#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: initial;
+    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
+    background-size: cover;
+}*/
+p{
+    font-size: 2em;
+}
 header {
     text-align: left;
     height:auto; 
-    /* background: #4e4d4a; */
+    /* background: #4e4d4a;*/
     width: 100%; 
     margin:0px auto;
     color: white;
@@ -18,6 +60,7 @@ header div#img img {
     height: 35px;
     margin-top: 5%;
 }
+
 header div#welcome {
     width: 70%;
     float: left;
@@ -88,11 +131,7 @@ main nav {
     display: block;
     font-size: 20px;
 }
-#map {
-    height: 400px;
-    width: 100%;
-    margin-top: 2%;
-}
+
 #weatherTable {
     background: #cfe1f9;
     height:auto; 
@@ -338,4 +377,6 @@ h1#errorh1 {
 h1#errorh1 a {
     text-decoration: none;
     color: green;
-}*/
+}
+*/
+
