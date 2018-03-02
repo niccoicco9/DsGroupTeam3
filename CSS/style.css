@@ -189,62 +189,44 @@ article#citylocation div#maincontainer div#containerthird div#containerimg img {
 
 /*******************************FOOTER****************************************/
 footer {
-    width: 100%;
+    display: block;
+    width:100%;
     height: auto;
+    margin: 2px 0 6px 0;
 }
 
 .social {
     width: 50px;
 }
-nav ul, footer div#divleft ul {
-    width:100%;
-    list-style: none;
-    
-    text-align: center;
-    padding: 0;
-    margin: 0;
-} 
+
 
 #footermenu{   
-    
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
 
-#footermenu li{
-    list-style: none;
-    display: inline-block;
-    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;    
+    text-align: center;
     font-size: 1em;
+    padding: 10px 0px;
+    margin: 0;
     height:auto;
     width:20%;
-    padding: 10px 0px;
     cursor: pointer;
 }
-
-
-#footermenu a {
+#footermenu a{
+    color:black;
+}
+#footermenu a:hover{
     text-decoration: none;
-    color: black;
-    text-align: center;
+    color:black;
 }
 
-#footersocial{
-    
-    
+
+#footersocial{  
     text-align: center;
     padding: 0;
     margin: 0;
 }
-#footersocial li{
-    list-style: none;
-    display: inline-block;
-    height:auto;
-    padding: 10px 15px;
-    cursor: pointer;
-}
+
 
 
 
