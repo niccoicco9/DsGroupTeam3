@@ -19,10 +19,9 @@ $(document).ready(function() {
         addTable (dataw);
         functionGo ();
     });
-    var url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2&";
+    var urlPrevisioniSettimanali = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + pos.lat + "&lon=" + pos.lng + "&APPID=ee6b293d773f4fcd7e434f79bbc341f2&lang=it";
     $.getJSON(url, function(dataf) {
-        $(document).delay(2000);
-        addTableForecast (dataf);
+        addTableForecast(urlPrevisioniSettimanali);
     });
     $.getJSON("https://randomuser.me/api/?results=1", function(datap) {
         addName (datap);
@@ -116,30 +115,82 @@ function addTable (app) {
 
 
 
-function addTableForecast (app) {
-    for (var cont=1;cont<7;cont++) {
-        $("#day"+cont).text(getNextDay(app.list[cont].dt*1000));
-        $("#mintemperature"+cont).text((app.list[cont].temp.min-274.15).toFixed (0) + "°C");
-        $("#maxtemperature"+cont).text((app.list[cont].temp.max-274.15).toFixed (0) + "°C");
-        $("#daytemperature"+cont).text((app.list[cont].temp.day-274.15).toFixed (0) + "°C");
-        $("#morningtemperature"+cont).text((app.list[cont].temp.morn-274.15).toFixed (0) + "°C");
-        $("#eveningtemperature"+cont).text((app.list[cont].temp.eve-274.15).toFixed (0) + "°C");
-        $("#nighttemperature"+cont).text((app.list[cont].temp.night-274.15).toFixed (0) + "°C");
-        $("#pressure"+cont).text(app.list[cont].pressure + " hpa");
-        $("#cloudness"+cont).text(app.list[cont].clouds);
-        $("#humidity"+cont).text(app.list[cont].humidity + "%");
-        $("#iconimg"+cont).attr("src", "https://openweathermap.org/img/w/" + app.list[cont].weather[0].icon + ".png");
-        $("#weather"+cont).text(app.list[cont].weather[0].main);
-        $("#weathercondition"+cont).text(app.list[cont].weather[0].description);
-        $("#windspeed"+cont).text(app.list[cont].speed + " m/s");
-        $("#windirection"+cont).text(windDirection(app.list[cont].deg.toFixed (2)));
-    }
+function addTableForecast (url) {
+    $.getJSON(url,function(datiMeteo){
+        var etichette = [];
+        var datiCanvas = [];
+        for (var cont=1;cont<7;cont++) {
+            $("#day"+cont).text(getNextDay(datiMeteo.list[cont].dt*1000));
+            $("#mintemperature"+cont).text((datiMeteo.list[cont].temp.min-274.15).toFixed (0) + "°C");
+            $("#maxtemperature"+cont).text((datiMeteo.list[cont].temp.max-274.15).toFixed (0) + "°C");
+            $("#daytemperature"+cont).text((datiMeteo.list[cont].temp.day-274.15).toFixed (0) + "°C");
+            $("#morningtemperature"+cont).text((datiMeteo.list[cont].temp.morn-274.15).toFixed (0) + "°C");
+            $("#eveningtemperature"+cont).text((datiMeteo.list[cont].temp.eve-274.15).toFixed (0) + "°C");
+            $("#nighttemperature"+cont).text((datiMeteo.list[cont].temp.night-274.15).toFixed (0) + "°C");
+            $("#pressure"+cont).text(datiMeteo.list[cont].pressure + " hpa");
+            $("#cloudness"+cont).text(datiMeteo.list[cont].clouds);
+            $("#humidity"+cont).text(datiMeteo.list[cont].humidity + "%");
+            $("#iconimg"+cont).attr("src", "https://openweathermap.org/img/w/" + datiMeteo.list[cont].weather[0].icon + ".png");
+            $("#weather"+cont).text(datiMeteo.list[cont].weather[0].main);
+            $("#weathercondition"+cont).text(datiMeteo.list[cont].weather[0].description);
+            $("#windspeed"+cont).text(datiMeteo.list[cont].speed + " m/s");
+            $("#windirection"+cont).text(windDirection(datiMeteo.list[cont].deg.toFixed (2)));
+
+            etichette[cont] = getNextDay(datiMeteo.list[cont].dt*1000);
+            datiCanvas[cont] = (datiMeteo.list[cont].temp.min-274.15).toFixed(0);
+
+            disegnaGrafico(etichette,datiCanvas);
+
+            etichette[cont] ={
+                label: getNextDay(datiMeteo.list[cont].dt*1000),
+                backgroundColor: 'rgba(52, 113, 231, 0.4)',
+                borderColor: 'rgba(52, 113, 231, 0.5)',
+                borderWidth: 2,
+                hoverBackgroundColor: 'rgba(52, 113, 231, 0.6)'
+            }
+        }
+    });
+    
+}
+
+
+function disegnaGrafico(etichette,temperature){
+    var canvas = document.getElementById('myCanvas').getContext('2d');
+    
+
+    var barData = {
+        backgroundColor: 'rgba(52, 113, 231, 0.4)',
+        borderColor: 'rgba(52, 113, 231, 0.5)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(52, 113, 231, 0.6)',
+        data: temperature
+    };
+
+    var barChartData = {
+        labels: etichette,
+        datasets: barData
+    };
+
+    new Chart(canvas, {
+        type: 'bar',
+        //data: barChartData,
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Temperature settimanali'
+            }
+        }
+    });
 }
 
 
 
-function getNextDay (app) {
-   var date = moment(app);
+function getNextDay (data) {
+   var date = moment(data);
    var formatted = date.format('ddd DD/MM/YYYY');
    return formatted;
 }
