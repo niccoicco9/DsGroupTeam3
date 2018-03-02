@@ -1,28 +1,8 @@
-body {
-    font-style: italic;
-    font-size: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0px 5px;
-}
-div#loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    display: initial;
-    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
-    background-size: cover;
-}
-p, h1 {
-    font-size: 2em;
-}
+/*Barra di navigazione*/
 header {
     text-align: left;
     height:auto; 
-    background: #4e4d4a;
+    /* background: #4e4d4a; */
     width: 100%; 
     margin:0px auto;
     color: white;
@@ -65,7 +45,33 @@ header div#welcome h1 p {
     margin: 0px;
     margin-left: 30px;
 }
-main {
+.navigazione{
+    font-size: 20px;
+}
+
+/* body {
+     font-style: italic;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 5px;
+} */
+/*div#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: initial;
+    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
+    background-size: cover;
+}
+p, h1 {
+    font-size: 2em;
+}*/
+
+/*main {
     background:transparent;
     width: 100%;
 }
@@ -74,7 +80,7 @@ main nav {
 }
 #geolocate {
     height: auto;
-    /*background: #4e4d4a;*/ 
+    /*background: #4e4d4a;
     width: 95%;
     margin: 10px auto;
     color: white;
@@ -332,4 +338,4 @@ h1#errorh1 {
 h1#errorh1 a {
     text-decoration: none;
     color: green;
-}
+}*/
