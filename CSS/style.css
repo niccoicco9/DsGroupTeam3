@@ -1,5 +1,190 @@
 
-footer { 
+
+/**********************************PRIMA SECTION*******************************/
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+.sottotitoloCards{
+    font-variant: small-caps;
+    color: #2c3e50;
+}
+
+.contenutoCards{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#nome{
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+p{
+    font-size: 2em;
+}
+
+/*body {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 5px;
+}
+/*div#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: initial;
+    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
+    background-size: cover;
+}*/
+/*******************************HEADER****************************************/
+header {
+    text-align: left;
+    height:auto; 
+    /* background: #4e4d4a;*/
+    width: 100%; 
+    margin:0px auto;
+    color: white;
+    position: relative;
+}
+header div#img {
+    width: 30%;
+    float: right;
+    height: 100px;
+}
+header div#img img {
+    position: relative;
+    height: 35px;
+    margin-top: 5%;
+}
+
+header div#welcome {
+    width: 70%;
+    float: left;
+    position: relative;
+    height: 100px;
+}
+header div#welcome div {
+    position: absolute;
+}
+header div#welcome div#first {
+    top: 0px;
+    margin-top: 1%;
+}
+header div#welcome div#second {
+    bottom: 0px;
+    margin-bottom: 1%;
+}
+header div#welcome div h1, header div#welcome div p {
+    margin: 20px 0px;
+    display: inline;
+    align-items: center;
+    margin-left: 50px;
+}
+header div#welcome h1 p {
+    margin: 0px;
+    margin-left: 30px;
+}
+.navigazione{
+    font-size: 20px;
+}
+
+/* body {
+     font-style: italic;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 5px;
+} */
+/*div#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: initial;
+    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
+    background-size: cover;
+}
+p, h1 {
+    font-size: 2em;
+}*/
+
+/*main {
+    background:transparent;
+    width: 100%;
+}
+main nav {
+    border-top: 1px solid #e6e6e6;
+}
+#geolocate {
+    height: auto;
+    /*background: #4e4d4a;
+    width: 95%;
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+}
+
+#weatherTable {
+    background: #cfe1f9;
+    height:auto; 
+    background:#CCC; 
+    width: 50%;
+    margin-top: 2.5% ;
+    font-size: 1.5em;
+    text-align: center;
+    float: left;
+}
+article#citylocation {
+    width: 50%;
+    float: right;
+    margin-top: 2.5%;
+}
+article#citylocation div#maincontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+article#citylocation div#maincontainer * {
+    text-align: center;
+}
+article#citylocation div#maincontainer div#containertexth1 h1 {
+    font-size: 5em;
+}
+article#citylocation div#maincontainer div#containertexth3 h3 {
+    font-size: 3em;
+}
+article#citylocation div#maincontainer div#containerthird {
+    display: flex;
+    flex-direction: row;
+}
+article#citylocation div#maincontainer div#containerthird div#containertextp, article#citylocation div#maincontainer div#containerthird div#containerimg {
+    width: 50%;
+}
+article#citylocation div#maincontainer div#containerthird div#containertextp p {
+    font-size: 5em;
+    float: left;
+}
+article#citylocation div#maincontainer div#containerthird div#containerimg img {
+    float: right;
+    height: 100%;
+}*/
+
+/*******************************FOOTER****************************************/
+footer {
+    width: 100%;
     height: auto;
 }
 
@@ -55,4 +240,6 @@ nav ul, footer div#divleft ul {
     padding: 10px 15px;
     cursor: pointer;
 }
+
+
 
