@@ -37,14 +37,14 @@
     display: initial;
     background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
     background-size: cover;
-}
+}*/
 p{
     font-size: 2em;
 }
 header {
     text-align: left;
     height:auto; 
-    background: #4e4d4a;
+    /* background: #4e4d4a;*/
     width: 100%; 
     margin:0px auto;
     color: white;
@@ -61,7 +61,60 @@ header div#img img {
     margin-top: 5%;
 }
 
-main {
+header div#welcome {
+    width: 70%;
+    float: left;
+    position: relative;
+    height: 100px;
+}
+header div#welcome div {
+    position: absolute;
+}
+header div#welcome div#first {
+    top: 0px;
+    margin-top: 1%;
+}
+header div#welcome div#second {
+    bottom: 0px;
+    margin-bottom: 1%;
+}
+header div#welcome div h1, header div#welcome div p {
+    margin: 20px 0px;
+    display: inline;
+    align-items: center;
+    margin-left: 50px;
+}
+header div#welcome h1 p {
+    margin: 0px;
+    margin-left: 30px;
+}
+.navigazione{
+    font-size: 20px;
+}
+
+/* body {
+     font-style: italic;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 5px;
+} */
+/*div#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: initial;
+    background: #000000 url("https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif") no-repeat center center;
+    background-size: cover;
+}
+p, h1 {
+    font-size: 2em;
+}*/
+
+/*main {
     background:transparent;
     width: 100%;
 }
@@ -326,3 +379,4 @@ h1#errorh1 a {
     color: green;
 }
 */
+

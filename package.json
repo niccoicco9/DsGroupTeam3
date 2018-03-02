@@ -1,7 +1,7 @@
 {
   "name": "dsgroupteam3",
   "version": "1.0.0",
-  "description": "seconda demo con npm installato",
+  "description": "Demo Team 3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,21 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/sorrentmutie/DsGroupTeam3.git"
   },
-  "keywords": [
-    "npm",
-    "html",
-    "javascript",
-    "css"
-  ],
-  "author": "Sami Arrom",
+  "author": "Vanessa Militello",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sorrentmutie/DsGroupTeam3/issues"
   },
   "homepage": "https://github.com/sorrentmutie/DsGroupTeam3#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "popper": "^1.0.1"
   }
 }

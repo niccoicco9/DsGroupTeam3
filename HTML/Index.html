@@ -10,27 +10,33 @@
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
     <body>
-        <!--<div id="loader"></div>
         <header>
-            <div id="img"><img src="../IMG/logo.svg" alt=""></div>
+            <nav class="navbar navbar-toggleable-md navbar-light bg-warning">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="../IMG/meteo.png" width="50" height="50" alt="">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link navigazione" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link navigazione" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link navigazione" href="#">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-        </header>-->
         <main class="container-fluid"> 
 
-            <!--
-                <div id="hello" class="card-header bg-warning">
-                            Ciao e Bentornato
-                            <div id="nome"></div>
-                        </div>
-                        <div id="second" class="card-body bg-warning">
-                            -<h1>Ci hai visitato il : </h1>
-                            <p id="data"></p>
-                        </div>
-             -->
-                
-
-                
-            
              <!-- Inserisco la riga dove sono presenti la mappa e i dati personali -->
             <section class="row mx-2 my-1">
                 <!-- Mappa -->
@@ -75,8 +81,25 @@
                     </div>
                 </article>
             </section>
+        <!-- <div id="loader"></div> -->
+        
+    
             
-            <!-- Sezione del meteo attuale -->
+            
+            <!-- Posizione attuale -->
+            <section class="row">
+                <!-- Riepilogo meteo attuale -->
+                <article class="col-md-4"></article>
+
+                <!-- Previsioni meteo settimanali -->
+                <article class="col-md-8"></article>
+            </section>
+
+
+
+
+
+            <!--   VANESSA
             <section id="details">
                 <article id="weatherTable">
                     <table>
@@ -131,16 +154,7 @@
                     </div>
                 </article>
             </section>
-
-            <!-- Posizione attuale -->
-            <section class="row">
-                <!-- Riepilogo meteo attuale -->
-                <article class="col-md-4"></article>
-
-                <!-- Previsioni meteo settimanali -->
-                <article class="col-md-8"></article>
-            </section>
-
+        VANESSA-->
 
         <!--
             <section id="detailsweather">
@@ -321,6 +335,7 @@
         <script src="../node_modules/jquery/dist/jquery.js"></script>
         <script src="../node_modules/moment/min/moment-with-locales.js"></script>
         <script src="../node_modules/tether/dist/js/tether.js"></script>
+        <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="../JavaScript/jsfunctions.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-fxKwF1sWWcV49zr9q0cT97l6fIqZj-E&callback=initMap"></script>
