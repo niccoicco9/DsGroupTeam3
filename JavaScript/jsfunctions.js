@@ -44,14 +44,14 @@ function initMap() {
         },
         zoom: 15
     });
-    infoWindow = new google.maps.InfoWindow;
+    infoWindow = new google.maps.InfoWindow();
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             pos.lat = position.coords.latitude;
             pos.lng = position.coords.longitude;
             infoWindow.setPosition(pos);
-            infoWindow.setContent('You are Here!!');
+            infoWindow.setContent('Sei qui!');
             infoWindow.open(map);
             map.setCenter(pos);
             setTimeout( function() {
@@ -118,8 +118,10 @@ function addTable (app) {
 function addTableForecast (url) {
     $.getJSON(url,function(datiMeteo){
         var etichette = [];
-        var datiCanvas = [];
-        for (var cont=1;cont<7;cont++) {
+        var minime = [];
+        var massime = [];
+
+        for (var cont = 0;cont < 6;cont++) {
             $("#day"+cont).text(getNextDay(datiMeteo.list[cont].dt*1000));
             $("#mintemperature"+cont).text((datiMeteo.list[cont].temp.min-274.15).toFixed (0) + "°C");
             $("#maxtemperature"+cont).text((datiMeteo.list[cont].temp.max-274.15).toFixed (0) + "°C");
@@ -137,35 +139,46 @@ function addTableForecast (url) {
             $("#windirection"+cont).text(windDirection(datiMeteo.list[cont].deg.toFixed (2)));
 
             etichette[cont] = getNextDay(datiMeteo.list[cont].dt*1000);
-            datiCanvas[cont] = (datiMeteo.list[cont].temp.min-274.15).toFixed(0);
+            minime[cont] = (datiMeteo.list[cont].temp.min-274.15).toFixed(0);
+            massime[cont] = ((datiMeteo.list[cont].temp.max-274.15).toFixed (0));
         }
-        disegnaGrafico(etichette,datiCanvas);
+        disegnaGrafico(etichette, minime, massime);
     });
     
 }
 
 
-function disegnaGrafico(etichette,temperature){
+function disegnaGrafico(etichette,temperatureMin, temperatureMax){
     var canvas = document.getElementById('myCanvas').getContext('2d');
     
 
-    var barData = {
+    var barDataMin = {
+        label: 'Minime',
         backgroundColor: 'rgba(52, 113, 231, 0.4)',
         borderColor: 'rgba(52, 113, 231, 0.5)',
         borderWidth: 2,
         hoverBackgroundColor: 'rgba(52, 113, 231, 0.6)',
-        data: temperature
+        data: temperatureMin
+    };
+
+    var barDataMax = {
+        label: 'Massime',
+        backgroundColor: 'rgba(220, 11, 36, 0.4)',
+        borderColor: 'rgba(220, 11, 36, 0.5)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgba(220, 11, 36, 0.5)',
+        data: temperatureMax
     };
 
     var barChartData = {
         labels: etichette,
-        datasets: [barData]
+        datasets: [barDataMin, barDataMax]
     };
 
     var asseX = {
         type: 'category',
         labels: etichette
-    }
+    };
 
     new Chart(canvas, {
         type: 'bar',
@@ -173,7 +186,7 @@ function disegnaGrafico(etichette,temperature){
         options: {
             responsive: true,
             legend: {
-                display: false
+                display: true
             },
             title: {
                 display: true,
