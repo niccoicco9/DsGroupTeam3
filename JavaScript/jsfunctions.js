@@ -138,17 +138,8 @@ function addTableForecast (url) {
 
             etichette[cont] = getNextDay(datiMeteo.list[cont].dt*1000);
             datiCanvas[cont] = (datiMeteo.list[cont].temp.min-274.15).toFixed(0);
-
-            disegnaGrafico(etichette,datiCanvas);
-
-            etichette[cont] ={
-                label: getNextDay(datiMeteo.list[cont].dt*1000),
-                backgroundColor: 'rgba(52, 113, 231, 0.4)',
-                borderColor: 'rgba(52, 113, 231, 0.5)',
-                borderWidth: 2,
-                hoverBackgroundColor: 'rgba(52, 113, 231, 0.6)'
-            }
         }
+        disegnaGrafico(etichette,datiCanvas);
     });
     
 }
@@ -168,22 +159,30 @@ function disegnaGrafico(etichette,temperature){
 
     var barChartData = {
         labels: etichette,
-        datasets: barData
+        datasets: [barData]
     };
+
+    var asseX = {
+        type: 'category',
+        labels: etichette
+    }
 
     new Chart(canvas, {
         type: 'bar',
-        //data: barChartData,
+        data: barChartData,
         options: {
             responsive: true,
             legend: {
-                position: 'top',
+                display: false
             },
             title: {
                 display: true,
                 text: 'Temperature settimanali'
+            },
+            scales:{
+                xAxes: asseX
             }
-        }
+        }   
     });
 }
 
